@@ -20,3 +20,6 @@ The player (assuming they are playing optimally) will aim to maximize their own 
 Therefore, we use Min() during the player's turn.
 
 ![explaination](https://github.com/user-attachments/assets/c050be3c-d861-4a53-8a2a-6cc01497afba)
+
+Note: I haven't considered the depth factor for this explaination.
+Depth factor is basically to add penalty in delayed wins or say add reward to delayed losses.
