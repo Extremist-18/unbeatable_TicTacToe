@@ -10,6 +10,8 @@ while accounting for the opponent's (minimizer) best responses.
 ### Ilustration
 Lets understand MiniMax algorithm using a example
 consider this state and ai wants to make a move so it will gr through all possible moves and will choose most optimal one. 
+
+
 ![state](https://github.com/user-attachments/assets/d727ea1d-0096-4863-955a-83ef930e1b83)
 
 
