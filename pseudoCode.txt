@@ -1,0 +1,33 @@
+function minimax(board, depth, isMaximizer, alpha, beta):
+    score = evaluate(board)
+    
+    // Terminal condition: win, loss, tie, or depth limit reached
+    if score == 10:   // Maximizer (AI) wins
+        return score - depth
+    if score == -10:  // Minimizer (opponent) wins
+        return score + depth
+    if isTie(board) or depth == 0:
+        return 0  // Tie 
+
+    if isMaximizingPlayer:
+        maxEval = -Infinity
+        for each move in getAvailableMoves(board):
+            makeMove(board, move, 'X')  // 'X' for maximizer
+            eval = minimax(board, depth - 1, false, alpha, beta)
+            undoMove(board, move)
+            maxEval = max(maxEval, eval)
+            alpha = max(alpha, eval)
+            if beta <= alpha:  
+                break
+        return maxEval
+    else:
+        minEval = +Infinity
+        for each move in getAvailableMoves(board):
+            makeMove(board, move, 'O')  // 'O' for minimizer
+            eval = minimax(board, depth - 1, true, alpha, beta)
+            undoMove(board, move)
+            minEval = min(minEval, eval)
+            beta = min(beta, eval)
+            if beta <= alpha:  
+                break
+        return minEval
